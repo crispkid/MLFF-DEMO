@@ -1,0 +1,14 @@
+/Users/peterchu/Documents/GitHub/MLFF-DEMO/bin/Debug/netcoreapp2.1/MLFF-DEMO.deps.json
+/Users/peterchu/Documents/GitHub/MLFF-DEMO/bin/Debug/netcoreapp2.1/MLFF-DEMO.runtimeconfig.json
+/Users/peterchu/Documents/GitHub/MLFF-DEMO/bin/Debug/netcoreapp2.1/MLFF-DEMO.runtimeconfig.dev.json
+/Users/peterchu/Documents/GitHub/MLFF-DEMO/bin/Debug/netcoreapp2.1/MLFF-DEMO.dll
+/Users/peterchu/Documents/GitHub/MLFF-DEMO/bin/Debug/netcoreapp2.1/MLFF-DEMO.pdb
+/Users/peterchu/Documents/GitHub/MLFF-DEMO/obj/Debug/netcoreapp2.1/MLFF-DEMO.csprojAssemblyReference.cache
+/Users/peterchu/Documents/GitHub/MLFF-DEMO/obj/Debug/netcoreapp2.1/MLFF-DEMO.csproj.CoreCompileInputs.cache
+/Users/peterchu/Documents/GitHub/MLFF-DEMO/obj/Debug/netcoreapp2.1/MLFF-DEMO.RazorAssemblyInfo.cache
+/Users/peterchu/Documents/GitHub/MLFF-DEMO/obj/Debug/netcoreapp2.1/MLFF-DEMO.RazorAssemblyInfo.cs
+/Users/peterchu/Documents/GitHub/MLFF-DEMO/obj/Debug/netcoreapp2.1/MLFF-DEMO.AssemblyInfoInputs.cache
+/Users/peterchu/Documents/GitHub/MLFF-DEMO/obj/Debug/netcoreapp2.1/MLFF-DEMO.AssemblyInfo.cs
+/Users/peterchu/Documents/GitHub/MLFF-DEMO/obj/Debug/netcoreapp2.1/MLFF-DEMO.RazorTargetAssemblyInfo.cache
+/Users/peterchu/Documents/GitHub/MLFF-DEMO/obj/Debug/netcoreapp2.1/MLFF-DEMO.dll
+/Users/peterchu/Documents/GitHub/MLFF-DEMO/obj/Debug/netcoreapp2.1/MLFF-DEMO.pdb
