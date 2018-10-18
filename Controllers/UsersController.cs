@@ -12,7 +12,7 @@ namespace MLFF_DEMO.Controllers {
     public class UsersController : ControllerBase {
 
         //SQL Connetion String
-        string sqlcommstring = @"Server=tcp:mlff.database.windows.net,1433;Initial Catalog=MLFF_DB;Persist Security Info=False;User ID={your_username};Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        string sqlcommstring = @"Server=tcp:mlff.database.windows.net,1433;Initial Catalog=MLFF_DB;Persist Security Info=False;User ID=mlff_sa;Password=1qaz@WSX;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         // GET api/values
         [HttpGet]
