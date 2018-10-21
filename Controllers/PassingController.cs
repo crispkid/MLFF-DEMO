@@ -31,12 +31,12 @@ namespace MLFF_DEMO.Controllers {
                             WHERE GANTRY_SN=@GANTRY_SN;
                             INSERT INTO Passing_His
                                 (HIS_SN, USER_SN, GANTRY_SN, PASSING_TIME)
-                            VALUES(@HIS_SN, @USER_SN, @GANTRY_SN, GETDATE());
+                            VALUES(@HIS_SN, @USER_SN, @GANTRY_SN, MLFF_DB.dbo.GetLocalDate(DEFAULT));
                             SELECT TOP 1 @BALANCE=BALANCE FROM MLFF_DB..Virtual_Account WHERE USER_SN=@USER_SN ORDER BY TRANSACTION_TIME DESC;
                             SET @BALANCE=@BALANCE-@AMOUNT;
                             INSERT INTO MLFF_DB..Virtual_Account
                                 (TRANSACTION_SN, USER_SN, TRANSACTION_TYPE, AMOUNT, BALANCE, TRANSACTION_TIME, DESCRIPTION_NOTE)
-                            VALUES(@TRANSACTION_SN, @USER_SN, 'DEBIT', @AMOUNT, @BALANCE, GETDATE(), @HIS_SN);";
+                            VALUES(@TRANSACTION_SN, @USER_SN, 'DEBIT', @AMOUNT, @BALANCE, MLFF_DB.dbo.GetLocalDate(DEFAULT), @HIS_SN);";
                 cn.Query<float> (sql, new { @USER_SN = myPassing.USER_SN, @GANTRY_SN = myPassing.GANTRY_SN });
             }
 

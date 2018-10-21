@@ -33,7 +33,7 @@ namespace MLFF_DEMO.Controllers {
                                     'CREDIT',
                                     @AMOUNT,
                                     @BALANCE,
-                                    GETDATE(),
+                                    MLFF_DB.dbo.GetLocalDate(DEFAULT),
                                     NULL
                             );";
                 cn.Query<float> (sql, new { @USER_SN = myTopup.USER_SN, @AMOUNT = myTopup.AMOUNT });
