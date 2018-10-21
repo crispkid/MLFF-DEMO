@@ -34,7 +34,7 @@ namespace MLFF_DEMO.Controllers {
                             VALUES(@HIS_SN, @USER_SN, @GANTRY_SN, GETDATE());
                             SELECT TOP 1 @BALANCE=BALANCE FROM MLFF_DB..Virtual_Account WHERE USER_SN=@USER_SN ORDER BY TRANSACTION_TIME DESC;
                             SET @BALANCE=@BALANCE-@AMOUNT;
-                            INSERT INTO MOFF_DB..Virtual_Account
+                            INSERT INTO MLFF_DB..Virtual_Account
                                 (TRANSACTION_SN, USER_SN, TRANSACTION_TYPE, AMOUNT, BALANCE, TRANSACTION_TIME, DESCRIPTION_NOTE)
                             VALUES(@TRANSACTION_SN, @USER_SN, 'DEBIT', @AMOUNT, @BALANCE, GETDATE(), @HIS_SN);";
                 cn.Query<float> (sql, new { @USER_SN = myPassing.USER_SN, @GANTRY_SN = myPassing.GANTRY_SN });

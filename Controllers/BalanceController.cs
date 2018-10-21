@@ -22,11 +22,10 @@ namespace MLFF_DEMO.Controllers {
             IEnumerable<float> myBalance = null;
             using (var cn = new SqlConnection (sqlcommstring)) {
                 cn.Open ();
-                string sql = @"SELECT TOP 1
-                                    BALANCE
-                                FROM MLFF_DB..Virtual_Account WITH (NOLOCK)
-                                WHERE USER_SN=@USER_SN
-                                ORDER BY TRANSACTION_Time DESC;";
+                string sql = @"SELECT TOP 1 BALANCE
+                            FROM MLFF_DB..Virtual_Account WITH (NOLOCK)
+                            WHERE USER_SN=@USER_SN
+                            ORDER BY TRANSACTION_TIME DESC;";
                 myBalance = cn.Query<float> (sql, new { @USER_SN = USER_SN });
             }
 
