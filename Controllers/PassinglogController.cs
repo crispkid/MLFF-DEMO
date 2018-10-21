@@ -27,7 +27,8 @@ namespace MLFF_DEMO.Controllers {
                                 ON A.HIS_SN= B.DESCRIPTION_NOTE
                                 INNER JOIN MLFF_DB..Gantrys C WITH (NOLOCK)
                                 on A.GANTRY_SN=C.GANTRY_SN
-                            WHERE A.USER_SN=@USER_SN;";
+                            WHERE A.USER_SN=@USER_SN
+                            ORDER BY A.PASSING_TIME DESC;";
                 myPassinglog = cn.Query<Models.passinglog> (sql, new { @USER_SN = USER_SN });
             }
 
