@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 using Dapper;
 using Microsoft.AspNetCore.Mvc;
 
+using Database;
+
 namespace MLFF_DEMO.Controllers {
     [Route ("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase {
 
         //SQL Connetion String
-        string sqlcommstring = @"Server=tcp:mlff.database.windows.net,1433;Initial Catalog=MLFF_DB;Persist Security Info=False;User ID=mlff_sa;Password=1qaz@WSX;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        //Database.Database myDatabase = new Database.Database();
+        string sqlcommstring = Database.Database.SqlConnationString;
 
         // GET api/values
         [HttpGet]
