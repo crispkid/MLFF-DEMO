@@ -4,9 +4,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
-using Microsoft.AspNetCore.Mvc;
-
 using Database;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MLFF_DEMO.Controllers {
     [Route ("api/[controller]")]
@@ -18,7 +17,7 @@ namespace MLFF_DEMO.Controllers {
         string sqlcommstring = Database.Database.SqlConnationString;
 
         // GET api/values
-        [HttpGet("{USER_SN}")]
+        [HttpGet ("{USER_SN}")]
         public ActionResult<IEnumerable<float>> Get (string USER_SN) {
             IEnumerable<float> myBalance = null;
             using (var cn = new SqlConnection (sqlcommstring)) {
@@ -28,10 +27,10 @@ namespace MLFF_DEMO.Controllers {
                                 FROM MLFF_DB..Virtual_Account WITH (NOLOCK)
                                 WHERE USER_SN=@USER_SN
                                 ORDER BY TRANSACTION_Time DESC;";
-                myBalance = cn.Query<float> (sql);
+                myBalance = cn.Query<float> (sql, new { @USER_SN = USER_SN });
             }
- 
-            return Ok(myBalance);
+
+            return Ok (myBalance);
         }
     }
 }
