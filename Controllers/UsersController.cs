@@ -4,9 +4,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
-using Microsoft.AspNetCore.Mvc;
-
 using Database;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MLFF_DEMO.Controllers {
     [Route ("api/[controller]")]
@@ -18,16 +17,16 @@ namespace MLFF_DEMO.Controllers {
         string sqlcommstring = Database.Database.SqlConnationString;
 
         // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<Models.user_info>> Get () {
+        [HttpGet ("{USER_NAME}")]
+        public ActionResult<IEnumerable<Models.user_info>> Get (string USER_NAME) {
             IEnumerable<Models.user_info> myUser = null;
             using (var cn = new SqlConnection (sqlcommstring)) {
                 cn.Open ();
-                string sql = @"select * from MLFF_DB..Users;";
-                myUser = cn.Query<Models.user_info> (sql);
+                string sql = @"SELECT * FROM MLFF_DB..Users WHERE USER_NAME=@USER_NAME;";
+                myUser = cn.Query<Models.user_info> (sql, new { @USER_NAME = USER_NAME });
             }
- 
-            return Ok(myUser);
+
+            return Ok (myUser);
         }
     }
 }
