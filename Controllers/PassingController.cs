@@ -26,7 +26,7 @@ namespace MLFF_DEMO.Controllers {
                             SELECT TOP 1 @PASSING_TIME=PASSING_TIME FROM MLFF_DB..Passing_His 
                             WHERE USER_SN=@USER_SN AND GANTRY_SN=@GANTRY_SN
                             ORDER BY PASSING_TIME DESC;
-                            IF DATEADD(SECOND, 10, MLFF_DB.dbo.GetLocalDate(DEFAULT))>@PASSING_TIME
+                            IF DATEADD(SECOND, 10, MLFF_DB.dbo.GetLocalDate(DEFAULT))>ISNULL(@PASSING_TIME, MLFF_DB.dbo.GetLocalDate(DEFAULT))
                             BEGIN
                                 SELECT @HIS_SN='PSHS'+CONVERT(VARCHAR(8), GETDATE(), 112)+CONVERT(VARCHAR(10), COUNT(HIS_SN)+1)
                                 FROM MLFF_DB..Passing_His;
