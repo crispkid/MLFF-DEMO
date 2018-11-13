@@ -22,7 +22,7 @@ namespace MLFF_DEMO.Controllers {
             IEnumerable<Models.passinglog> myPassinglog = null;
             using (var cn = new SqlConnection (sqlcommstring)) {
                 cn.Open ();
-                string sql = @"SELECT C.GANTRY_NAME, A.PASSING_TIME, B.AMOUNT
+                string sql = @"SELECT C.GANTRY_NAME, A.PASSING_TIME, B.AMOUNT, A.IS_READ
                             FROM MLFF_DB..Passing_His A INNER JOIN MLFF_DB..Virtual_Account B WITH (NOLOCK)
                                 ON A.HIS_SN= B.DESCRIPTION_NOTE
                                 INNER JOIN MLFF_DB..Gantrys C WITH (NOLOCK)
