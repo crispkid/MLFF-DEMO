@@ -8,5 +8,6 @@ namespace MLFF_DEMO.Models {
         public string GANTRY_NAME { set; get; }
         public string PASSING_TIME { set; get; }
         public float AMOUNT { set; get; }
+        public float IS_READ { set; get; }
     }
 }
