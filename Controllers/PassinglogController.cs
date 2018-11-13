@@ -30,6 +30,9 @@ namespace MLFF_DEMO.Controllers {
                             WHERE A.USER_SN=@USER_SN
                             ORDER BY A.PASSING_TIME DESC;";
                 myPassinglog = cn.Query<Models.passinglog> (sql, new { @USER_SN = USER_SN });
+
+                sql=@"UPDATE MLFF_DB..Passing_His SET IS_READ=1 WHERE IS_READ=0;";
+                cn.Execute(sql);
             }
 
             return Ok (myPassinglog);
